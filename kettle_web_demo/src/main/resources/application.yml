@@ -1,0 +1,25 @@
+server:
+port: 8080
+
+#spring:
+#  data:
+#    mongodb:
+#      host: localhost
+#      username:
+#      password:
+#      database: case_manager
+#      port: 27017
+
+kettle:
+# 该线程池会优先充满至最大的线程数（JDK默认优先将任务提交到队列，队列满了再充满至最大的线程数）
+pool:
+# 线程池前缀
+namePrefix: kettleJobPool
+# 核心线程数
+coreThreads: 20
+# 最大的线程数
+maxThreads: 50
+# 队列容量
+queueCapacity: 100
+# 5分钟空闲则释放
+keepAliveTimeMin: 5

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.wentao</groupId>
+    <artifactId>kettle_web_demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>kettle_web_demo</name>
+    <description>Demo project for Spring Boot</description>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <kettlepath>${basedir}/src/main/resources/libs</kettlepath>
+        <kettleversion>9.1.0.0-SNAPSHOT</kettleversion>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--kettle相关jar包-->
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${kettleversion}</version>
+            <systemPath>${kettlepath}/kettle-core-9.1.0.0-324.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${kettleversion}</version>
+            <systemPath>${kettlepath}/kettle-engine-9.1.0.0-324.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>metastore</artifactId>
+            <version>${kettleversion}</version>
+            <systemPath>${kettlepath}/metastore-9.1.0.0-324.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <systemPath>${kettlepath}/guava-17.0.jar</systemPath>
+            <scope>system</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.woodstox</groupId>
+            <artifactId>wstx-asl</artifactId>
+            <systemPath>${kettlepath}/wstx-asl-3.2.4.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-vfs2</artifactId>
+            <version>2.3</version>
+            <systemPath>${kettlepath}/commons-vfs2-2.3.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.pentaho</groupId>
+            <artifactId>pentaho-encryption-support</artifactId>
+            <systemPath>${kettlepath}/pentaho-encryption-support-9.1.0.0-324.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.scannotation</groupId>
+            <artifactId>scannotation</artifactId>
+            <systemPath>${kettlepath}/scannotation-1.0.2.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <systemPath>${kettlepath}/javassist-3.20.0-GA.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>pentaho</groupId>-->
+        <!--            <artifactId>pentaho-mongo-utils</artifactId>-->
+        <!--            <systemPath>${kettlepath}/pentaho-mongo-utils-9.1.0.0-324.jar</systemPath>-->
+        <!--            <scope>system</scope>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <systemPath>${kettlepath}/commons-io-2.2.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <systemPath>${kettlepath}/commons-lang-2.6.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.mongodb</groupId>-->
+        <!--            <artifactId>mongo-java-driver</artifactId>-->
+        <!--            <systemPath>${kettlepath}/mongo-java-driver-3.10.2.jar</systemPath>-->
+        <!--            <scope>system</scope>-->
+        <!--        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.mongodb</groupId>
+             <artifactId>mongo-java-driver</artifactId>
+             <version>3.10.2</version>
+         </dependency>
+         <dependency>
+             <groupId>org.mongodb</groupId>
+             <artifactId>mongodb-driver-sync</artifactId>
+             <version>4.0.3</version>
+         </dependency>
+         <dependency>
+             <groupId>org.mongodb</groupId>
+             <artifactId>mongodb-driver-core</artifactId>
+             <version>3.8.2</version>
+         </dependency>-->
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <systemPath>${kettlepath}/commons-codec-1.14.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-apache-client4</artifactId>
+            <version>1.19.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>jersey-client</artifactId>
+                    <groupId>com.sun.jersey</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <systemPath>${kettlepath}/jersey-client-1.19.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jersey</groupId>
+            <artifactId>jersey-service</artifactId>
+            <systemPath>${kettlepath}/jersey-server-1.19.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.json.simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <systemPath>${kettlepath}/json-simple-1.1.1.jar</systemPath>
+            <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.19</version>
+        </dependency>
+
+
+
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
